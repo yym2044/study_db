@@ -106,4 +106,5 @@ select * from cafe where name="별다방" or name="빽다방";
 select * from cafe where location > 5;
 select * from cafe where name like '%다방';
 
+select name from cafe;
 
