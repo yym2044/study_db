@@ -17,3 +17,6 @@ create table member2 (
     id varchar(100),
     regdate datetime
 );
+
+
+
