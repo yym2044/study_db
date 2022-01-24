@@ -61,3 +61,21 @@ insert into book (
 );
 drop table book;
 select * from book;
+
+create table room (
+	seq INT,
+    photo INT,
+    caption VARCHAR(100),
+    type VARCHAR(100),
+    reservation_time INT,
+    accomodation INT,
+    chairNtable TINYINT,
+    bodymirror TINYINT,
+    toilet TINYINT,
+    non_smoking TINYINT,
+    lounge TINYINT,
+    shower TINYINT,
+    internetNwifi TINYINT
+);
+
+select * from room;
