@@ -26,3 +26,8 @@ create table book (
     price INT
 );
 
+drop table member;
+drop table member2;
+drop table book;
+
+
