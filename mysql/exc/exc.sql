@@ -18,5 +18,11 @@ create table member2 (
     regdate datetime
 );
 
-
+create table book (
+	seq int,
+    name varchar(100),
+    publisher varchar(100),
+    author varchar(100),
+    price INT
+);
 
