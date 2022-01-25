@@ -4,6 +4,7 @@ show tables;
 
 create table book (
 	seq INT,
+    photo INT,
     series VARCHAR(100),
     title VARCHAR(100),
     subtitle VARCHAR(100),
@@ -24,6 +25,7 @@ create table book (
 
 insert into book (
 	seq
+    ,photo
     ,series
     ,title
     ,subtitle
@@ -42,6 +44,7 @@ insert into book (
     ,ebook
 ) values (
 	1
+    ,1
     ,"이지스퍼블리싱-Do it! 시리즈"
     ,"Do it! HTML+CSS+자바스크립트 웹 표준의 정석"
     ,'한 권으로 끝내는 웹 기본 교과서'
@@ -79,3 +82,6 @@ create table room (
 );
 
 select * from room;
+
+
+
