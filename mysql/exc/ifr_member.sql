@@ -65,11 +65,13 @@ insert into ifr_member (
     ,'hyoon'
     ,1
     ,1
-    ,23
-    ,82
+    ,1
+    ,1
     ,'Green'
     ,'Hi, everyone'
 );
+
+delete from ifr_member where seq = 1;
 
 select * from ifr_member;
 
@@ -110,12 +112,13 @@ insert into ifr_code (
     ,seq
     ,gender
 ) values (
-	5
-    ,1
-    ,''
+	11
+    ,3
+    ,'배달대행지'
 );
 
-select * from ifr_codegroup;
+
+
 select * from ifr_code;
 
 
