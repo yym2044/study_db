@@ -1,4 +1,4 @@
--- 폰, 이메일, 취미 인서트
+-- phone, email, hobby, address, addressOnline 인서트
 
 INSERT INTO `bts`.`infrmemberphone`
 (
@@ -67,22 +67,82 @@ INSERT INTO `bts`.`infrmemberhobby`
 `ifmhUseNy`,
 `ifmhOrder`,
 `ifmhDelNy`,
-`regIp`,
-`regSeq`,
-`regDevice`,
 `regDateTime`,
 `regDateTimeSvr`,
-`modIp`,
-`modSeq`,
-`modDevice`,
 `modDateTime`,
 `modDateTimeSvr`
 )
 VALUES
 (
-
+2
+,40
+,1
+,2
+,0
+,now()
+,now()
+,now()
+,now()
 );
 
+INSERT INTO `bts`.`infrmemberaddress`
+(
+`ifmmSeq`,
+`ifmaDefaultNy`,
+`ifmaTypeCd`,
+`ifmaTitle`,
+`ifmaAddress1`,
+`ifmaAddress2`,
+`ifmaZipcode`,
+`ifmaDelNy`,
+`regDateTime`,
+`regDateTimeSvr`,
+`modDateTime`,
+`modDateTimeSvr`)
+VALUES
+(
+2
+,0
+,44
+,'배송대행지'
+,'7850 SW Nimbus Ave'
+,'S12345'
+,'97008'
+,0
+,now()
+,now()
+,now()
+,now()
+);
+
+INSERT INTO `bts`.`infrmemberaddressonline`
+(
+`ifmmSeq`,
+`ifaoTypeCd`,
+`ifaoDefaultNy`,
+
+`ifaoUrl`,
+-- `ifaoTitle`,
+`ifaoDelNy`,
+`regDateTime`,
+`regDateTimeSvr`,
+`modDateTime`,
+`modDateTimeSvr`
+)
+VALUES
+(
+2
+,34
+,1
+
+,'www.blog.naver.com/yym/'
+-- ,
+,0
+,now()
+,now()
+,now()
+,now()
+);
 
 
 -- 코드번호 조회 쿼리 
