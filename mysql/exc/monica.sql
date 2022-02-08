@@ -1,3 +1,6 @@
+-- 코드그룹, 코드, 국적, 멤버 인서트
+
+
 INSERT INTO `bts`.`infrCodeGroup`
 (`ifcgName`,
 `ifcgUseNy`,
@@ -20,13 +23,6 @@ now()
 );
 
 select * from infrcodegroup order by ifcgOrder;
-
-update infrcodegroup
-set ifcgdelny = 0
-where ifcgseq > 10;
-
-
-
 
 
 INSERT INTO `bts`.`infrcode`

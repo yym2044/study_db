@@ -1,4 +1,4 @@
-select * from infrmember;
+-- 폰, 이메일, 취미 인서트
 
 INSERT INTO `bts`.`infrmemberphone`
 (
@@ -27,6 +27,60 @@ VALUES
 ,now()
 ,now()
 ,now()
+);
+
+INSERT INTO `bts`.`infrmemberemail`
+(
+`ifmmSeq`,
+`ifmeDefaultNy`,
+`ifmeTypeCd`,
+`ifmeEmailFull`,
+`ifmeEmailAccount`,
+`ifmeEmailDomain`,
+`ifmeEmailDomainCd`,
+`infeDelNy`,
+`regDateTime`,
+`regDateTimeSvr`,
+`modDateTime`,
+`modDateTimeSvr`
+)
+VALUES
+(
+2
+,0
+,17
+,'yym2044@gmail.com'
+,'yym2044'
+,'gmail.com'
+,20
+,0
+,now()
+,now()
+,now()
+,now()
+);
+
+INSERT INTO `bts`.`infrmemberhobby`
+(
+`ifmmSeq`,
+`ifmhHobbyCd`,
+`ifmhUseNy`,
+`ifmhOrder`,
+`ifmhDelNy`,
+`regIp`,
+`regSeq`,
+`regDevice`,
+`regDateTime`,
+`regDateTimeSvr`,
+`modIp`,
+`modSeq`,
+`modDevice`,
+`modDateTime`,
+`modDateTimeSvr`
+)
+VALUES
+(
+
 );
 
 
