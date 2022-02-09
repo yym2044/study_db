@@ -46,7 +46,8 @@ VALUES
 select * from infrmemberjoinqna;
 
 select
-a.ifcgName
+a.ifcgseq
+,a.ifcgName
 ,b.ifcdSeq
 ,b.ifcdName
 from infrCodeGroup a

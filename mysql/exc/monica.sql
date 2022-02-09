@@ -110,7 +110,7 @@ INSERT INTO `bts`.`infrmember`
 `ifmmId`,
 `ifmmPwd`,
 `ifmmPwdModDate`,
-`ifmmGender`,
+`ifmmGenderCd`,
 `ifmmDob`,
 `ifmmSavedCd`,
 `ifmmMarriageCd`,
