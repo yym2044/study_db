@@ -1,3 +1,4 @@
+use bts;
 select 
 a.ifcgSeq
 ,a.ifcgName
@@ -15,5 +16,5 @@ a.ifcgSeq
     and b.ifcdUseNy = 1
 order by
 	a.ifcgSeq asc
-    , b.ifcdSeq desc
+    , b.ifcdSeq asc
  ;
