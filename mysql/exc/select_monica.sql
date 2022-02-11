@@ -57,3 +57,4 @@ where 1=1
 	and a.ifmmDelNy = 0
    -- and a.ifmmId like '%esan%'
 ;
+use bts;

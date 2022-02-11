@@ -87,11 +87,11 @@ INSERT INTO `bts`.`infrnationality`
 `modDateTimeSvr`)
 VALUES
 (
-'미국'
-,'US'
-,'USA'
+'일본'
+,'JP'
+,'JPN'
 ,1
-,2
+,3
 ,0
 ,now()
 ,now()
@@ -104,6 +104,7 @@ select * from infrmember;
 
 INSERT INTO `bts`.`infrmember`
 (
+-- `ifmmSeq`,
 `ifmmAdminNy`,
 `ifmmDormancyNy`,
 `ifmmName`,
@@ -114,8 +115,8 @@ INSERT INTO `bts`.`infrmember`
 `ifmmDob`,
 `ifmmSavedCd`,
 `ifmmMarriageCd`,
--- `ifmmMarriageDate`,
--- `ifmmChildrenNum`,
+`ifmmMarriageDate`,
+`ifmmChildrenNum`,
 `ifmmFavoriteColor`,
 `ifmmEmailConsentNy`,
 `ifmmSmsConsentNy`,
@@ -127,21 +128,22 @@ INSERT INTO `bts`.`infrmember`
 `modDateTimeSvr`)
 VALUES
 (
+
 0,
 0,
-'윤영민',
-'Desane',
-'cheezeDalchong',
+'김정민',
+'TheMarine',
+'bd948bbd4b067e198b65a715957ee8298309c6c13672f2691b42fa48ae78b1da',
 now(),
+3,
+"1984-04-21",
+8,
+13,
+"2018-09-10",-- ifmmMarriageDate,
+2,-- ifmmChildrenNum,
+'Green',
 1,
-"1996-06-07",
 1,
-1,
--- ifmmMarriageDate,
--- ifmmChildrenNum,
-'Blue',
-1,
-0,
 1,
 0,
 now(),
@@ -150,3 +152,6 @@ now(),
 now()
 );
 
+select * from infrMember;
+
+delete from infrMember where ifmmSeq = 3;
