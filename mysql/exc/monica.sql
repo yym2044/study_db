@@ -135,7 +135,7 @@ VALUES
 'TheMarine',
 'bd948bbd4b067e198b65a715957ee8298309c6c13672f2691b42fa48ae78b1da',
 now(),
-3,
+3, 
 "1984-04-21",
 8,
 13,

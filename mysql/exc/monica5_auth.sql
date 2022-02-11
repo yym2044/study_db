@@ -94,7 +94,7 @@ VALUES
 );
 
 select
-a.ifatSeq
+a.ifatSeq 
 ,(select ifatName from infrAuth where ifatSeq = a.ifatSeq) as ifatName
 ,a.ifmuSeq
 ,(select ifmuName from infrMenu where ifmuSeq = a.ifmuSeq) as ifmuName

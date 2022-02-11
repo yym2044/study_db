@@ -16,7 +16,7 @@ a.ifmmSeq
 ,b.ifmaTypeCd
 ,(select ifcdName from infrCode where ifcdSeq = b.ifmaTypeCd) as ifmaTypeName  -- 이런 식으로 뽑아오자
 ,b.ifmaTitle
-,b.ifmaAddress1
+,b.ifmaAddress1 
 ,b.ifmaAddress2
 ,b.ifmaZipCode
 ,c.ifaoTypeCd
