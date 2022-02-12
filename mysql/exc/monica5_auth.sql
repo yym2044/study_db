@@ -92,7 +92,7 @@ INSERT INTO `bts`.`infrauthmember`
 VALUES
 (
 );
-
+use bts;
 select
 a.ifatSeq 
 ,(select ifatName from infrAuth where ifatSeq = a.ifatSeq) as ifatName
