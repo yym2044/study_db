@@ -23,3 +23,12 @@ select * from infrcategory where ifctname like '주방용품%';
 select * from infrcategory where ifctParents = 46 and ifctOrder = 4;
 
 update infrcategory set ifctParents = 48 where ifctSeq >= 90;
+
+-- 카테고리 셀렉
+WITH RECURSIVE CteCate(ifctSeq, ifctParents, ParentsName, ifctName, depth, orderString, ifctOrder, ifctDepth) AS 
+(
+    select ifctSeq, ifctParents, cast('' as char(30)), ifctName, 0, cast(ifctSeq as char(10)), ifctOrder, ifctDepth from infrCategory where ifctParents is null
+    UNION ALL
+    select d.ifctSeq, d.ifctParents, cte.ifctName, d.ifctName, depth + 1, concat(cte.orderString, '-', d.ifctOrder), d.ifctOrder, d.ifctDepth from infrCategory d inner join CteCate cte on d.ifctParents = cte.ifctSeq
+)
+select * from CteCate order by orderString;
