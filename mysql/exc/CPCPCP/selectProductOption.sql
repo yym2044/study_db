@@ -6,7 +6,6 @@ a.trpdseq
 ,b.tropName
 ,c.trocName
 ,c.trocAdditionalPrice
-
 from tradproduct a
 left join tradOptionParent b 
 	on b.tropSeq = a.trpdOptionParentCd1
@@ -15,6 +14,7 @@ left join tradoptionchild c
 where a.trpdSeq = 2
 ;
 
+use cpcpcp;
 select * from tradOptionParent;
 select * from tradOptionChild;
 
