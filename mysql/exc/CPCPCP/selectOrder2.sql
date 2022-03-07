@@ -27,11 +27,11 @@ select * from tradoptionchild;
 
 
 select
-a.trpdseq
-,a.trpdName
-,b.tropName
+-- a.trpdseq
+-- ,a.trpdName
+b.tropName
 ,c.trocName
-,(select trorOrderId from tradorder where trpdSeq = a.trpdSeq)
+,c.trocAdditionalPrice
 from cpcpcp.tradproduct a
 left join cpcpcp.tradOptionParent b 
 	on b.tropSeq = a.trpdOptionParentCd1 
@@ -39,6 +39,6 @@ left join cpcpcp.tradOptionParent b
 		or b.tropSeq = a.trpdOptionParentCd3
 left join cpcpcp.tradoptionchild c
 	on c.tropSeq = b.tropSeq
-where a.trpdSeq = 1;
+where a.trpdSeq = 2;
 
 
