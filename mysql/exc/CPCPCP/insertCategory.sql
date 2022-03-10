@@ -32,3 +32,16 @@ WITH RECURSIVE CteCate(ifctSeq, ifctParents, ParentsName, ifctName, depth, order
     select d.ifctSeq, d.ifctParents, cte.ifctName, d.ifctName, depth + 1, concat(cte.orderString, '-', d.ifctOrder), d.ifctOrder, d.ifctDepth from infrCategory d inner join CteCate cte on d.ifctParents = cte.ifctSeq
 )
 select * from CteCate order by orderString;
+
+use cpcpcp;
+
+select * from infrMember;
+
+select 
+a.ifmmSeq
+,a.ifmmName
+,a.ifmmId
+,(select ifcdName from infrCode where ifcdSeq = a.ifmmGenderCd) as ifmmGenderName
+,a.ifmmDob
+,a.ifmmFavoriteColor
+from infrMember a;
