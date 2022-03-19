@@ -9,16 +9,16 @@ INSERT INTO `cpcpcp`.`infrcategory`
 )
 VALUES
 (
-6
-,8
-,'커피/티/와인'
+13
+,2
+,'캐릭터별완구'
 ,2
 ,1
 ,0
 );
 use cpcpcp;
 select * from infrcategory;
-select * from infrcategory where ifctname like '주방용품%';
+select * from infrcategory where ifctname like '소설%';
 
 select * from infrcategory where ifctParents = 46 and ifctOrder = 4;
 
@@ -44,4 +44,43 @@ a.ifmmSeq
 ,(select ifcdName from infrCode where ifcdSeq = a.ifmmGenderCd) as ifmmGenderName
 ,a.ifmmDob
 ,a.ifmmFavoriteColor
+,a.ifmmDelNy
 from infrMember a;
+use cpcpcp;
+INSERT INTO
+		infrMemberEmail (
+			ifmmSeq
+			,ifmeEmailFull
+		) VALUES (
+			9
+			,'test2@naver.com'
+		);
+use cpcpcp;
+
+select * from infrmember;
+
+INSERT INTO
+infrMemberPhone (
+	ifmmSeq
+    
+) VALUES (
+
+);
+
+use cpcpcp;
+select * from infrMember;
+delete from cpcpcp.infrMember where ifmmSeq = 17;
+delete from infrMemberPhone where ifmmSeq = 17;
+
+select last_insert_id() from infrMemberEmail;
+
+select * from infrCodeGroup;
+select * from infrCode;
+
+delete from infrCodeGroup where ifcgSeq>=38;
+
+select * from infrMemberAddress;
+
+
+alter table infrMemberAddress change ifmaAddress3 ifmaAddressReferences varchar(100);
+
