@@ -170,10 +170,38 @@ AND ifntUseNy = 1 AND ifntDelNy = 0 ;
 			, now()
             , 1
             , 0
-		);
+		)
+        ;
         
 SELECT @ifntOrder:=0;
-UPDATE infrMembernote SET ifntOrder=@ifntOrder:=@ifntOrder+1 where ifmmSeq=1 ORDER BY ifntOrder
+
+SET @ifntOrder = 0;
+UPDATE 
+	infrMembernote 
+    
+SET 
+   ifntOrder = @ifntOrder:=@ifntOrder+1 where ifmmSeq=2 ORDER BY ifntOrder    
+;
+
+select * from infrMemberNote;
+use cpcpcp;
+DELETE FROM
+		infrMemberNote
+	WHERE 1=1
+		AND ifntOrder = 1
+        AND ifmmSeq = 1;
+        
+use cpcpcp;
+select * from infrMember;
 
 
+select * from infrMemberNote;
 
+select * from infrMember;
+select * from infrMemberEmail;
+select * from infrMemberPhone;
+select * from infrmembernationality;
+use cpcpcp;
+select * from infrMember order by regDateTime;
+
+update infrMember set regDateTime = ifmmRegDate where ifmmSeq>=1;
