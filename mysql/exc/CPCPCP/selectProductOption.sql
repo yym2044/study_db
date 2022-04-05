@@ -1,4 +1,5 @@
 -- 한 상품의 옵션이 어떤 것들이 있는지 보기
+use cpcpcp;
 select
 a.trpdseq
 ,a.trpdPid
@@ -16,19 +17,38 @@ left join tradoptionchild c
 where a.trpdSeq = 1
 ;
 
-use cpcpcp;
+use cpcpcp2;
 select * from tradOptionParent;
 select * from tradOptionChild;
+-- 이렇게 하면 될듯??
+select 
+	a.trpdSeq
+    , a.trpdName
+--    , b.trprOptionChildCd1
+    , (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd1) as trprOptionName1
+--    , b.trprOptionChildCd2
+    , (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd2) as trprOptionName2
+--    , b.trprOptionChildCd3
+     , (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd3) as trprOptionName3
+    , b.trprStock 
+from 
+	tradProduct a 
+left join tradProduct_real b 
+    on b.trpdSeq = a.trpdSeq
+;
+select * from tradProduct_real;
 use cpcpcp;
 
 -- 각 상품의 옵션 패런트 값 selectOne해오기
 select 
 	a.trpdSeq
     , a.trpdName
-    , (select tropName from tradoptionparent where tropSeq = a.trpdOptionParentCd1)
+    , (select tropName from tradoptionparent where tropSeq = a.trpdOptionParentCd1) as trpdOptionParentName1
     , a.trpdOptionParentCd1
-    , (select tropName from tradoptionparent where tropSeq = a.trpdOptionParentCd2)
-    , (select tropName from tradoptionparent where tropSeq = a.trpdOptionParentCd3)
+    , (select tropName from tradoptionparent where tropSeq = a.trpdOptionParentCd2) as trpdOptionParentName2
+    , a.trpdOptionParentCd2
+    , (select tropName from tradoptionparent where tropSeq = a.trpdOptionParentCd3) as trpdOptionParentName3
+    , a.trpdOptionParentCd3
 from 
 	tradproduct a
 where
@@ -94,6 +114,24 @@ use cpcpcp;
 select * from tradProduct;
 
 
-select * from infrcategory where ifctName like '%패션의류%';
+select * from infrcategory where ifctName like '%생수%';
 select * from infrcategory where ifctSeq = 48;
 select * from infrCategory;
+
+select * from tradOptionParent;
+select * from tradOptionChild;
+select * from tradProduct_real;
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+use cpcpcp2;
+
+select 
+a.trpdSeq
+, a.trpdName
+-- , b.trprOptionChildCd1
+, (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd1) AS trprOptionChildName1
+-- , b.trprOptionChildCd2
+, (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd2) AS trprOptionChildName2
+-- , b.trprOptionChildCd3
+, (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd3) AS trprOptionChildName3
+from tradProduct a left join tradProduct_real b on b.trpdSeq = a.trpdSeq;
