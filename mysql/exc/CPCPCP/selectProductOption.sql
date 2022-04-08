@@ -20,16 +20,23 @@ where a.trpdSeq = 1
 use cpcpcp2;
 select * from tradOptionParent;
 select * from tradOptionChild;
--- 이렇게 하면 될듯??
+
+-- 이렇게 하면 될듯?? 실제 옵션세팅에 따른 상품 리스트 뽑기
 select 
 	a.trpdSeq
     , a.trpdName
 --    , b.trprOptionChildCd1
     , (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd1) as trprOptionName1
+    , (select trocAdditionalPrice from tradOptionChild where trocSeq = b.trprOptionChildCd1) as trprAdditionalPrice1
 --    , b.trprOptionChildCd2
     , (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd2) as trprOptionName2
+	, (select trocAdditionalPrice from tradOptionChild where trocSeq = b.trprOptionChildCd2) as trprAdditionalPrice2
 --    , b.trprOptionChildCd3
      , (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd3) as trprOptionName3
+     , (select trocAdditionalPrice from tradOptionChild where trocSeq = b.trprOptionChildCd3) as trprAdditionalPrice3
+     
+     , (select ifnull((trprAdditionalPrice1),0)) + (select ifnull((trprAdditionalPrice2),0)) + (select ifnull((trprAdditionalPrice3),0)) as trprTotalAdditionalPrice
+     
     , b.trprStock 
 from 
 	tradProduct a 
