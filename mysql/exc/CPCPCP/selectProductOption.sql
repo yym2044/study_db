@@ -34,14 +34,21 @@ select
 --    , b.trprOptionChildCd3
      , (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd3) as trprOptionName3
      , (select trocAdditionalPrice from tradOptionChild where trocSeq = b.trprOptionChildCd3) as trprAdditionalPrice3
-     
      , (select ifnull((trprAdditionalPrice1),0)) + (select ifnull((trprAdditionalPrice2),0)) + (select ifnull((trprAdditionalPrice3),0)) as trprTotalAdditionalPrice
-     
     , b.trprStock 
 from 
 	tradProduct a 
 left join tradProduct_real b 
     on b.trpdSeq = a.trpdSeq
+where 
+	a.trpdSeq = 18
+order by
+	a.trpdOptionParentCd1
+    , b.trprOptionChildCd1
+    , a.trpdOptionParentCd2
+    , b.trprOptionChildCd2
+    , a.trpdOptionParentCd3
+    , b.trprOptionChildCd3
 ;
 select * from tradProduct_real;
 use cpcpcp;
@@ -142,3 +149,8 @@ a.trpdSeq
 -- , b.trprOptionChildCd3
 , (select trocName from tradOptionChild where trocSeq = b.trprOptionChildCd3) AS trprOptionChildName3
 from tradProduct a left join tradProduct_real b on b.trpdSeq = a.trpdSeq;
+
+select * from infrmemberuploaded;
+use cpcpcp;
+select * from tradproductuploaded;
+delete from tradproductuploaded where seq >= 7;

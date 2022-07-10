@@ -205,3 +205,77 @@ use cpcpcp;
 select * from infrMember order by regDateTime;
 
 update infrMember set regDateTime = ifmmRegDate where ifmmSeq>=1;
+use cpcpcp;
+update infrMember set ifmmDelNy = 0 where ifmmSeq>=1;
+	
+select ifmmSeq, ifmmId, ifmmPwd from infrMember;
+
+SELECT
+			ifmmSeq
+			, ifmmId
+			, ifmmName
+			, ifmmDesc
+            , a.*
+            
+		FROM
+			infrMember a
+		WHERE 1=1
+			AND ifmmId = '123123'
+			AND ifmmPwd = '123123'
+            ;
+select * from infrMember;
+            
+update infrMember set ifmmDelNy = 0 where ifmmSeq >= 5;
+use cpcpcp;
+select * from infrmemberaddressonline;
+select 
+	ifmmSeq
+    , ifmmName
+    , ifmmId
+    , ifmmPwd
+    , ifmmPwdModDate
+from
+	infrMember;
+
+SELECT
+			ifaoSeq
+			, ifaoDefaultNy
+			, ifaoTypeCd
+			, ifaoSnsTypeCd
+			, ifaoUrl
+			, ifaoTitle
+		FROM
+			infrMemberAddressOnline
+		WHERE 1=1
+			AND ifaoDelNy = 0
+			AND ifmmSeq = 76
+            ;
+            use cpcpcp;
+            
+select * from infrMember;
+
+update infrMember set ifmmAdminNy = 0 where ifmmSeq >= 7;
+use cpcpcp;
+select * from tradProduct order by trpdPrice;
+
+SELECT
+		ifmmSeq
+		, ifmmAdminNy
+		, ifmmId
+		, ifmmName
+		, ifmmDesc
+	FROM
+		infrMember
+	WHERE 1=1
+		AND ifmmId = '2192233189';
+        
+show variables like 'lower_case_table_names';
+SHOW VARIABLES WHERE Variable_Name LIKE "%dir";
+select * from infrAuth;
+
+select * from infrMember;
+use cpcpcp;
+UPDATE infrMember SET ifmmName = '7의의지' , ifmmId = '7777' , ifmmPwd = NULL , ifmmGenderCd = 
+NULL , ifmmDob = NULL , ifmmDelNy = 0 , ifmmGradeCd = NULL , ifmmStatusCd = 78 , ifmmEmailConsentNy 
+= NULL , ifmmSmsConsentNy = NULL , ifmmPushConsentNy = NULL , ifmmDesc = NULL , modDateTime 
+= NULL WHERE 1 = 1 AND ifmmSeq = '17' 
